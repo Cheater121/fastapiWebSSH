@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSSH</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/xterm.min.css" rel="stylesheet">
+    <link href="/static/css/fullscreen.min.css" rel="stylesheet">
+    <style>
+        .container { margin-top: 20px; }
+        .btn { margin-top: 15px; }
+    </style>
+</head>
+<body>
+<div class="container form-container">
+    <form id="connect">
+        <div class="row">
+            <div class="col">
+                <label for="hostname">Hostname</label>
+                <input class="form-control" type="text" id="hostname" required>
+            </div>
+            <div class="col">
+                <label for="port">Port</label>
+                <input class="form-control" type="number" id="port" value="22" min="1" max="65535">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="username">Username</label>
+                <input class="form-control" type="text" id="username" required>
+            </div>
+            <div class="col">
+                <label for="password">Password</label>
+                <input class="form-control" type="password" id="password">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Connect</button>
+    </form>
+</div>
+
+<div class="container">
+    <div id="status" style="color: red;"></div>
+    <div id="terminal" style="height: 400px;"></div>
+</div>
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/xterm.min.js"></script>
+<script src="/static/js/xterm-addon-fit.min.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
